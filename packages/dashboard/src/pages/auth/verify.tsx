@@ -1,8 +1,18 @@
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const VerifyPage = () => {
   const router = useRouter();
-  const { email } = router.query; // Lấy email từ query
+  const [email, setEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const userEmail = router.query.email || localStorage.getItem('userEmail');
+    if (userEmail) {
+      setEmail(userEmail as string);
+    } else {
+      router.push('/auth/login');
+    }
+  }, [router]);
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">

@@ -72,10 +72,11 @@ export default function Index() {
 		if (result.success) {
 			await mutate(result.data);
 
-			router.push({
+			return router.push({
 				pathname: '/auth/verify',
 				query: { email: user.email },
 			});
+
 		}
 
 		setError("auth", { message: result.data });
