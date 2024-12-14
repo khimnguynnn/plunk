@@ -2,6 +2,7 @@
 
 echo "Starting Prisma migrations..."
 npx prisma migrate deploy
+npx prisma migrate dev --name verificationStatus
 echo "Prisma migrations completed."
 
 sh replace-variables.sh &&
