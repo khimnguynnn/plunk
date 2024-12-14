@@ -2,19 +2,19 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 const VerifyPage = () => {
-  const router = useRouter();
-  const [email, setEmail] = useState<string | null>(null);
+const router = useRouter();
+const [email, setEmail] = useState<string | null>(null);
 
-  useEffect(() => {
-    const userEmail = router.query.email || localStorage.getItem('userEmail');
-    if (userEmail) {
-      setEmail(userEmail as string);
-    } else {
-      router.push('/auth/login');
-    }
-  }, [router]);
+useEffect(() => {
+const userEmail = router.query.email || localStorage.getItem('userEmail');
+if (userEmail) {
+    setEmail(userEmail as string);
+} else {
+    router.push('/auth/login');
+}
+}, [router]);
 
-  return (
+return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
       <div className="mx-auto max-w-xl text-center text-neutral-800">
         <p className="my-6 text-6xl">
