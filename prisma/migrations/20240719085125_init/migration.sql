@@ -20,7 +20,9 @@ CREATE TABLE "users" (
     "password" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-
+    "isVerified" BOOLEAN NOT NULL DEFAULT false,
+    "verificationToken" TEXT,
+    "verificationExpires" TIMESTAMP,
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
 
