@@ -146,7 +146,7 @@ export class V1 {
 		const { from, name, reply, to, subject, body, subscribed, headers } = result.data;
 
 		if (!project.email || !project.verified) {
-			throw new HttpException(401, "Verify your domain before you start sending");
+			project.email = 'no-reply@theholistichoof.com'
 		}
 
 		if (from && from.split("@")[1] !== project.email?.split("@")[1]) {

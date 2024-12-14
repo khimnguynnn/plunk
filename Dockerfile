@@ -1,5 +1,5 @@
 # Base Stage
-FROM node:20-alpine3.20 AS base
+FROM khimnguynn/alpine-base AS base
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN yarn workspace @plunk/api build
 RUN yarn workspace @plunk/dashboard build
 
 # Final Stage
-FROM node:20-alpine3.20
+FROM khimnguynn/alpine-base
 
 WORKDIR /app
 

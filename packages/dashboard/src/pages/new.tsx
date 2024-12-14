@@ -79,7 +79,7 @@ export default function Index() {
 			await mutate([...projects, result.data]);
 			localStorage.setItem("project", result.data.id);
 			setActiveProjectId(result.data.id);
-			return router.push("/");
+			return router.push("/onboarding");
 		}
 		setSubmitted(false);
 		setError("error", { message: result.data });
