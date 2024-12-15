@@ -10929,6 +10929,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^1.8.3"
     "@prisma/client": "npm:^5.17.0"
+    cross-env: "npm:^7.0.3"
     lerna: "npm:^8.1.6"
     prisma: "npm:^5.17.0"
     rimraf: "npm:^5.0.9"
