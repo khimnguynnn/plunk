@@ -19,7 +19,7 @@ const server = new SMTPServer({
 		session: SMTPServerSession,
 		callback: (err: Error | null | undefined, response?: SMTPServerAuthenticationResponse) => void,
 	) {
-		if (auth.username?.toLowerCase() !== "plunk") {
+		if (auth.username?.toLowerCase() !== "smtpuser") {
 			return callback(new Error("Invalid login"));
 		}
 
@@ -103,4 +103,8 @@ const server = new SMTPServer({
 
 server.listen(465, "0.0.0.0", () => {
 	signale.success("SMTP server started on port 465");
+});
+
+server.listen(587, "0.0.0.0", () => {
+	signale.success("SMTP server started on port 587 (STARTTLS)");
 });
