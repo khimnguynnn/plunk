@@ -55,7 +55,7 @@ export class Tasks {
 					}
 				}
 
-				email = project.verified && project.email ? template.email ?? project.email : "theholistichoof.com";
+				email = project.verified && project.email ? template.email ?? project.email : "no-reply@theholistichoof.com";
 				name = template.from ?? project.from ?? project.name;
 
 				({ subject, body } = EmailService.format({
@@ -68,7 +68,7 @@ export class Tasks {
 					},
 				}));
 			} else if (campaign) {
-				email = project.verified && project.email ? campaign.email ?? project.email : "theholistichoof.com";
+				email = project.verified && project.email ? campaign.email ?? project.email : "no-reply@theholistichoof.com";
 				name = campaign.from ?? project.from ?? project.name;
 
 				({ subject, body } = EmailService.format({

@@ -121,7 +121,7 @@ export class ActionService {
 				const { messageId } = await EmailService.send({
 					from: {
 						name: action.template.from ?? project.from ?? project.name,
-						email: project.verified && project.email ? action.template.email ?? project.email : "theholistichoof.com",
+						email: project.verified && project.email ? action.template.email ?? project.email : "no-reply@theholistichoof.com",
 					},
 					to: [contact.email],
 					content: {
